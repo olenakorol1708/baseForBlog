@@ -1,0 +1,56 @@
+[
+  {
+    "postId": 1,
+    "id": 1,
+    "title": "useHistory()",
+    "text": "позволяет нам получить доступ к объекту history. Затем мы можем вызывать такие методы объекта history, как goBack или push. Метод goBack позволяет перенаправить пользователя к предыдущему маршруту в стеке истории. Например, если пользователь перейдет со страницы Home на страницу Shop, а затем нажмет кнопку для возврата назад (“Go Back”), он снова будет перенаправлен на страницу Home,const hist = useHistory();<button onClick={() => hist.goBack()}>Go Back</button>."
+  },
+  {
+    "postId": 2,
+    "id": 2,
+    "title": "useLocation",
+    "text": "Хук useLocation возвращает объект location, представляющий текущий URL. Его можно рассматривать как useState, который возвращает новое местоположение при каждом изменении URL. Этот хук можно использовать, например, чтобы вызвать событие просмотра новой страницы для инструмента веб-аналитики, Возвращаемый объект location содержит поле search, которое включает в себя строку запроса. Теперь, если вы используете простые строки запроса key=value (ключ=значение) и вам не нужна поддержка IE 11, можно использовать встроенный в браузер API URLSearchParams. Этот API предоставляет несколько методов, чтобы проверить, содержит ли строка запроса определенный ключ (с помощью функции has), но мы хотим получить параметр запроса с помощью функции get,<Link to='/about?param=text'>About</Link> console.log(new URLSearchParams(location.search).get('param')); // result: 'text' "
+  },
+  {
+    "postId": 3,
+    "id": 3,
+    "title": "useActionData()",
+    "text": "The most common use-case for this hook is form validation errors. If the form isn't right, you can return the errors and let the user try again. const errors = useActionData();"
+  },
+  {
+    "postId": 4,
+    "id": 4,
+    "title": "useFetcher()",
+    "text": "handle multiple concurrent submissions in a list (typical 'todo app' list where you can click multiple buttons and all should be pending at the same time)"
+  },
+  {
+    "postId": 5,
+    "id": 5,
+    "title": "useFormAction()",
+    "text": "This hook is used internally in <Form> to automatically resolve default and relative actions to the current route in context."
+  },
+  {
+    "postId": 6,
+    "id": 6,
+    "title": "useParams()",
+    "text": "Теперь можно получить доступ к параметру id через объект params, возвращаемый хуком useParams, Кроме того, мы добавили возможность перехода к следующему ID товара с помощью кнопки с текстом Next product. Здесь используется метод push, открытый объектом history из предыдущего примера, чтобы поместить новую запись в стек history . Если воспользоваться кнопкой Go Back, то можно заметить, что вы будете перенаправлены к предыдущим идентификаторам товаров, const params = useParams(),const current = params.id,const next = Number(current) + 1,const hist = useHistory(),<button onClick={() => hist.goBack()}>Go Back</button>.,<button onClick={() => hist.push(/shop/${next})}>Next product</button>,"
+  },
+  {
+    "postId": 7,
+    "id": 7,
+    "title": "useRuoteMatch()",
+    "text": " Если URL не содержит ID (/shop), то отобразятся все товары. В случае, если он содержит идентификатор (/shop/:id), то отображается конкретный продукт,Сначала импортируйте хук useRouteMatch. Затем передадим хуку useRouteMatch путь, который необходимо проверить: /shop/:id. Если маршрут совпадает, откроется страница товара. Можно получить доступ к идентификатору продукта через routeMatch.params.id."
+  },
+  {
+    "postId": 8,
+    "id": 8,
+    "title": "useSearchParams()",
+    "text": " returns an array of two values: the current location's search params and a function that may be used to update them  let [searchParams, setSearchParams] = useSearchParams(), f handle(){let params = serializeFormQuery(event.target),setSearchParams(params)} "
+  },
+  {
+    "postId": 9,
+    "id": 9,
+    "title": "useMatch()",
+    "text": "Returns match data about a route at the given path relative to the current location."
+  }
+]
